@@ -12,7 +12,7 @@ function apt_get_install_and_purge(){
 function download_and_install_apps(){
     dpkg -l "google-chrome*"
     return_value=$?
-    if [ ! [ $return_value -eq 0 ]]
+    if [ [ $return_value -eq 1 ] ]
     then
 	wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 	sudo dpkg -i google-chrome-stable_current_amd64.deb
@@ -57,6 +57,8 @@ function github_cloning(){
 	cd emacs-config
 	git fetch
 	git checkout dev
+	git submodule init
+	git submodule update 
 	cd ..
     fi
     if [ -d ~/.emacs.d ]
