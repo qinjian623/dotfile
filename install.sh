@@ -4,8 +4,7 @@ cd ~
 function apt_get_install_and_purge(){
     sudo apt-get install -y vim emacs stunnel4 w3m m17n-docs ctags vim-scripts texlive git xchat ibus ibus-sunpinyin openssh-server tmux build-essential
     sudo apt-get install -y ubuntu-restricted-extras openjdk-7-jdk mplayer clang youtube-dl ubuntu-restricted-extras dosbox tree
-    
-    sudo apt-get install -y p7zip openjdk-7-jdk unrar screen
+    sudo apt-get install -y p7zip openjdk-7-jdk unrar screen cmake
     sudo apt-get purge -y pidgin abiword gnumeric thunderbird gnome-mines gnome-sudoku
 }
 
@@ -66,8 +65,10 @@ function github_cloning(){
 	mv ~/.emacs.d ~/.emacs.d.backup
     fi
     cp -R emacs-config ~/.emacs.d
+    # 如果使用英文的环境，这里还需要处理Emacs不能输入中文的问题，更改LC_CTYPE为中文
     cd ~
 }
+
 apt_get_install_and_purge
 
 download_and_install_apps
