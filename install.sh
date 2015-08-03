@@ -1,11 +1,13 @@
 #sudo apt-get update
 cd ~
-
 function apt_get_install_and_purge(){
     sudo apt-get install -y vim emacs stunnel4 w3m m17n-docs ctags vim-scripts texlive git xchat ibus ibus-sunpinyin openssh-server tmux build-essential
     sudo apt-get install -y ubuntu-restricted-extras openjdk-7-jdk mplayer clang youtube-dl ubuntu-restricted-extras dosbox tree
     sudo apt-get install -y p7zip openjdk-7-jdk unrar screen cmake
+    sudo apt-get install -y texlive-latex-extra texlive-xetex texlive-lang-cjk python-pygments python3-pygments
+    sudo apt-get install -y eclipse
     sudo apt-get purge -y pidgin abiword gnumeric thunderbird gnome-mines gnome-sudoku
+    sudo apt-get autoremove
 }
 
 function download_and_install_apps(){
